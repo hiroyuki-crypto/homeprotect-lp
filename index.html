@@ -15,10 +15,10 @@
   --red:#C0392B;--red-pale:#FDF0EF;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans JP',sans-serif;color:var(--tx);background:var(--cr);line-height:1.8}
+body{font-family:'Zen Maru Gothic','Noto Sans JP',sans-serif;color:var(--tx);background:var(--cr);line-height:1.9;font-size:17px}
 header{position:fixed;top:0;width:100%;z-index:100;background:rgba(28,58,43,0.97);backdrop-filter:blur(8px);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{color:var(--wh);font-family:'Noto Serif JP',serif;font-size:15px;font-weight:600;letter-spacing:0.05em;flex-shrink:0}
-.logo span{font-size:11px;color:var(--bl);display:block;font-family:'Noto Sans JP',sans-serif;font-weight:400}
+.logo span{font-size:11px;color:var(--bl);display:block;font-family:'Zen Maru Gothic','Noto Sans JP',sans-serif;font-weight:400}
 .h-right{display:flex;align-items:center;gap:16px}
 .h-tel{color:rgba(255,255,255,0.7);font-size:12px;text-align:right}
 .h-tel strong{color:var(--wh);font-size:16px;display:block}
@@ -27,7 +27,7 @@ header{position:fixed;top:0;width:100%;z-index:100;background:rgba(28,58,43,0.97
 
 .hero-grid{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.015) 60px,rgba(255,255,255,0.015) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.015) 60px,rgba(255,255,255,0.015) 61px)}
 .hero-in{position:relative;z-index:2;width:100%;max-width:1100px;margin:0 auto;padding:60px 24px}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(196,113,59,0.15);border:1px solid rgba(196,113,59,0.4);color:var(--bl);padding:8px 16px;border-radius:2px;font-size:12px;font-weight:700;letter-spacing:0.15em;margin-bottom:28px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.25);border:1px solid rgba(255,255,255,0.7);color:#fff;padding:8px 16px;border-radius:2px;font-size:13px;font-weight:700;letter-spacing:0.15em;margin-bottom:28px}
 .hero-eyebrow::before{content:'';width:6px;height:6px;background:var(--ac);border-radius:50%}
 h1{font-family:'Noto Serif JP',serif;font-size:clamp(30px,4.5vw,54px);font-weight:700;color:var(--wh);line-height:1.45;margin-bottom:20px}
 h1 em{color:var(--bl);font-style:normal}
@@ -121,7 +121,7 @@ h1 em{color:var(--bl);font-style:normal}
 .sim-box{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:36px;max-width:580px;margin:40px auto 0}
 .sim-label{font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:10px;font-weight:500}
 .sim-btns{display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap}
-.sim-btn{padding:12px 18px;border:1px solid rgba(255,255,255,0.25);border-radius:4px;background:transparent;color:rgba(255,255,255,0.8);font-size:14px;cursor:pointer;transition:all 0.15s;font-family:'Noto Sans JP',sans-serif}
+.sim-btn{padding:12px 18px;border:1px solid rgba(255,255,255,0.25);border-radius:4px;background:transparent;color:rgba(255,255,255,0.8);font-size:14px;cursor:pointer;transition:all 0.15s;font-family:'Zen Maru Gothic','Noto Sans JP',sans-serif}
 .sim-btn.on{background:var(--ac);border-color:var(--ac);color:var(--wh);font-weight:700}
 .sim-row{display:flex;align-items:center;gap:16px;margin-bottom:28px}
 .sim-row input[type=range]{flex:1;accent-color:var(--ac)}
@@ -130,7 +130,7 @@ h1 em{color:var(--bl);font-style:normal}
 .sim-rl{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:4px}
 .sim-rp{font-size:38px;font-weight:700;color:var(--wh);line-height:1.1}
 .sim-rn{font-size:12px;color:rgba(255,255,255,0.5);margin-top:6px}
-.sim-cta{width:100%;margin-top:18px;padding:18px;background:var(--ac);color:var(--wh);border:none;border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:all 0.2s}
+.sim-cta{width:100%;margin-top:18px;padding:18px;background:var(--ac);color:var(--wh);border:none;border-radius:6px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Zen Maru Gothic','Noto Sans JP',sans-serif;transition:all 0.2s}
 .sim-cta:hover{background:#B5612B}
 /* FLOW */
 .flow-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0;margin-top:48px}
@@ -155,12 +155,12 @@ h1 em{color:var(--bl);font-style:normal}
 .form-row{margin-bottom:18px}
 .form-label{font-size:13px;font-weight:700;color:var(--tx);margin-bottom:6px;display:block}
 .form-label .req{color:var(--ac);font-size:11px;margin-left:4px}
-.fi,.fs,.ft{width:100%;padding:13px 15px;border:1.5px solid var(--bd);border-radius:6px;font-size:15px;font-family:'Noto Sans JP',sans-serif;color:var(--tx);background:var(--cr);transition:border-color 0.15s;-webkit-appearance:none}
+.fi,.fs,.ft{width:100%;padding:13px 15px;border:1.5px solid var(--bd);border-radius:6px;font-size:15px;font-family:'Zen Maru Gothic','Noto Sans JP',sans-serif;color:var(--tx);background:var(--cr);transition:border-color 0.15s;-webkit-appearance:none}
 .fi:focus,.fs:focus,.ft:focus{outline:none;border-color:var(--gm);background:var(--wh)}
 .ft{min-height:90px;resize:vertical;line-height:1.7}
 .fs{padding-right:38px;cursor:pointer}
 .f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.form-submit{width:100%;padding:19px;background:var(--gd);color:var(--wh);border:none;border-radius:6px;font-size:17px;font-weight:700;cursor:pointer;font-family:'Noto Sans JP',sans-serif;letter-spacing:0.05em;transition:all 0.2s;margin-top:6px}
+.form-submit{width:100%;padding:19px;background:var(--gd);color:var(--wh);border:none;border-radius:6px;font-size:17px;font-weight:700;cursor:pointer;font-family:'Zen Maru Gothic','Noto Sans JP',sans-serif;letter-spacing:0.05em;transition:all 0.2s;margin-top:6px}
 .form-submit:hover{background:var(--gm);transform:translateY(-2px)}
 .form-privacy{font-size:12px;color:var(--tl);text-align:center;margin-top:14px;line-height:1.7}
 .success{display:none;text-align:center;padding:40px 20px}
@@ -190,7 +190,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
 <header>
   <div class="logo">株式会社ホームプロテクト<span>ホウ酸防蟻施工 直接責任施工</span></div>
   <div class="h-right">
-    <div class="h-tel">平日 9:00〜18:00<br><strong>0725-90-4466</strong></div>
+    <div class="h-tel">平日 9:00〜18:00<br><strong><a href="tel:0725904466" style="color:inherit;text-decoration:none">0725-90-4466</a></strong></div>
     <a href="#form" class="h-cta">無料で申し込む</a>
   </div>
 </header>
@@ -210,11 +210,30 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
     </div>
     <div class="hero-cta-row">
       <a href="#simulator" class="btn-main">今すぐ金額を確認する</a>
-      <div class="hero-tel-block">お電話でのご相談<br><strong>0725-90-4466</strong></div>
+      <div class="hero-tel-block">お電話でのご相談<br><strong><a href="tel:0725904466" style="color:inherit;text-decoration:none">0725-90-4466</a></strong></div>
     </div>
   </div>
 </section>
 
+
+<section class="sec" style="background:#fff;padding:60px 24px">
+  <div style="max-width:900px;margin:0 auto;text-align:center">
+    <p style="color:#c4713b;font-weight:700;letter-spacing:.12em;font-size:13px;margin-bottom:12px">シロアリ被害の実態</p>
+    <h2 style="font-size:clamp(1.4rem,3vw,1.9rem);font-weight:900;color:#1c3a2b;margin-bottom:16px">放置すると、こうなります</h2>
+    <p style="color:#555;margin-bottom:40px;font-size:1rem">実際のシロアリ被害を知っておくことが、大切な家を守る第一歩です。</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+      <div style="border-radius:12px;overflow:hidden;background:#f5f0e8;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:#999;font-size:14px;border:2px dashed #ccc">
+        📷 被害写真①<br>（準備中）
+      </div>
+      <div style="border-radius:12px;overflow:hidden;background:#f5f0e8;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:#999;font-size:14px;border:2px dashed #ccc">
+        📷 被害写真②<br>（準備中）
+      </div>
+      <div style="border-radius:12px;overflow:hidden;background:#f5f0e8;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:#999;font-size:14px;border:2px dashed #ccc">
+        📷 被害写真③<br>（準備中）
+      </div>
+    </div>
+  </div>
+</section>
 <section class="warning">
   <div class="in">
     <p class="sec-label" style="color:var(--red)">業界の現状</p>
@@ -472,7 +491,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
 <footer>
   <p class="co">株式会社ホームプロテクト</p>
   <p>〒594-1151　大阪府和泉市唐国町1-3-36<br>
-  TEL：<a href="tel:0725904466">0725-90-4466</a>　FAX：0725-90-4477　受付：平日 9:00〜18:00<br>
+  TEL：<a href="tel:0725904466"><a href="tel:0725904466" style="color:inherit;text-decoration:none">0725-90-4466</a></a>　FAX：0725-90-4477　受付：平日 9:00〜18:00<br>
   E-mail：<a href="mailto:home-protect@future.ocn.ne.jp">home-protect@future.ocn.ne.jp</a><br>
   対応エリア：大阪府・奈良県・和歌山県・兵庫県南部</p>
   <p style="margin-top:16px;font-size:12px">© 2025 株式会社ホームプロテクト All Rights Reserved.</p>
