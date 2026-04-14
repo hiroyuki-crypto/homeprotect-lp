@@ -558,7 +558,7 @@ p.form-privacy { font-size: 16px !important; }
 <footer>
   <p class="co"><span style="font-size:1.15em;font-weight:700;">株式会社ホームプロテクト</span></p>
   <p>〒594-1151　大阪府和泉市唐国町1-3-36<br>
-  TEL：<a href="tel:0725904466"><a href="tel:0725904466" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1c3a2b;text-decoration:none;padding:12px 24px;border-radius:50px;font-size:1.1rem;font-weight:900;letter-spacing:0.05em">📞 0725-90-4466</a></a>　FAX：0725-90-4477　受付：平日 9:00〜17:00<br>
+  TEL：<a href="tel:0725904466"><a href="tel:0725904466" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1c3a2b;text-decoration:none;padding:12px 24px;border-radius:50px;font-size:1.1rem;font-weight:900;letter-spacing:0.05em">📞 0725-90-4466</a></a>　　受付：平日 9:00〜17:00<br>
   E-mail：<a href="mailto:home-protect@future.ocn.ne.jp">home-protect@future.ocn.ne.jp</a><br>
   対応エリア：大阪府・奈良県・和歌山県・兵庫県南部</p>
   <p style="margin-top:16px;font-size: 19px">© 2025 <span style="font-size:1.15em;font-weight:700;">株式会社ホームプロテクト</span> All Rights Reserved.</p>
@@ -587,6 +587,8 @@ function sub(e){
 upd();
 </script>
 
+
+
 <style id="final-override">
 /* ヒーロー PC */
 @media(min-width:768px){
@@ -600,11 +602,30 @@ upd();
     text-shadow: none !important;
   }
 }
-/* フォントサイズ */
-.faq-a, .faq-a p, .faq-a li { font-size: 19px !important; line-height: 2.0 !important; }
+
+/* ヒーロー本文・リード */
+p.hero-lead { font-size: 21px !important; line-height: 2.1 !important; }
+
+/* セクション共通 */
+p.sec-label, .sec-label { font-size: 16px !important; letter-spacing: 0.1em; }
+p.sec-lead, .sec-lead { font-size: 22px !important; line-height: 1.8 !important; }
+
+/* 本文全般 */
 section p, div p { font-size: 19px !important; line-height: 2.1 !important; }
 section li, div li { font-size: 19px !important; line-height: 2.1 !important; }
-small, .note { font-size: 16px !important; }
+small, .note { font-size: 16px !important; line-height: 1.9 !important; }
+
+/* FAQ */
+.faq-a, .faq-a * { font-size: 19px !important; line-height: 2.1 !important; }
+.faq-q, .faq-q * { font-size: 19px !important; }
+
+/* カードの小見出し */
+.trust-card p, .merit-card p, .step-card p { font-size: 17px !important; line-height: 1.9 !important; }
+
+/* フッター */
+footer p, .footer p, .ft p { font-size: 17px !important; line-height: 2.0 !important; }
+p.form-privacy { font-size: 15px !important; }
+p.co { font-size: 15px !important; }
 </style>
 </body>
 </html>
