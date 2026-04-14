@@ -243,15 +243,18 @@ p.form-privacy { font-size: 16px !important; }
       <div class="tbadge">🏛️ JBTA認定施工店</div>
       <div class="tbadge">🚫 訪問販売・飛び込み営業一切なし</div>
     </div>
-    <div class="hero-cta-row" style="flex-direction:row;align-items:stretch;gap:10px;width:100%">
-      <a href="#simulator" class="btn-main" style="flex:1;justify-content:center;padding:14px 10px;font-size:14px">今すぐ金額を確認する</a>
-      <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
-        <p style="color:rgba(255,255,255,0.75);font-size:11px;margin:0;text-align:center;line-height:1.4">お電話でのご相談<br>平日 9:00〜17:00</p>
-        <a href="tel:0725904466" style="width:100%;display:inline-flex;align-items:center;justify-content:center;gap:6px;background:#fff;color:#1c3a2b;text-decoration:none;padding:10px 6px;border-radius:50px;font-size:14px;font-weight:900;letter-spacing:0.03em;white-space:nowrap">📞 0725-90-4466</a>
-      </div>
-    </div>
   </div>
 </section>
+
+<div style="background:#1c3a2b;padding:20px 24px">
+  <div style="max-width:900px;margin:0 auto">
+    <p style="color:rgba(255,255,255,0.7);font-size:13px;margin-bottom:8px">お電話でのご相談（平日 9:00〜17:00）</p>
+    <div style="display:flex;gap:10px">
+      <a href="#simulator" class="btn-main" style="flex:1;justify-content:center;padding:14px 10px;font-size:15px">今すぐ金額を確認する</a>
+      <a href="tel:0725904466" style="flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;background:#fff;color:#1c3a2b;text-decoration:none;padding:14px 10px;border-radius:50px;font-size:15px;font-weight:900;letter-spacing:0.03em;white-space:nowrap">📞 0725-90-4466</a>
+    </div>
+  </div>
+</div>
 
 <div style="background:#f5f0e8;padding:28px 24px;border-bottom:1px solid #e0d8cc">
   <p style="max-width:900px;margin:0 auto;color:#4a4a4a;font-size:1rem;line-height:1.9;text-align:center">建築業者経由のシロアリ施工には、見えないマージンがあります。当社は自社スタッフが直接施工。中間マージンをカットし、自然素材ホウ酸を適正価格でご提供します。</p>
@@ -685,15 +688,15 @@ footer p{font-size:15px!important;line-height:1.9!important}
   /* ヒーローh1 */
   .hero h1{font-size:1.6rem!important;line-height:1.6!important;margin-bottom:0!important}
 
-  /* ヒーロー：eyebrow+h1はそのまま、バッジ以降を写真の下へ強制移動 */
-  .hero{align-items:flex-start!important}
+  /* ヒーロー：stretch で hero-in を全高に、バッジを最下部へ */
+  .hero{align-items:stretch!important}
   .hero-in{
-    display:block!important;
-    padding:8vh 16px 32px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    padding:8vh 16px 24px!important;
   }
   .hero-eyebrow{margin-bottom:12px!important}
-  /* バッジをギリギリまで下げる */
-  .hero-trust{margin-top:38vh!important}
+  .hero-trust{margin-top:auto!important}
 }
 </style></body>
 </html>
