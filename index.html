@@ -680,19 +680,16 @@ footer p{font-size:15px!important;line-height:1.9!important}
   /* ヒーローh1 */
   .hero h1{font-size:1.6rem!important;line-height:1.6!important;margin-bottom:0!important}
 
-  /* ヒーロー：上部h1・下部バッジ群に分割して写真を見せる */
-  .hero{align-items:flex-start!important}
+  /* ヒーロー：stretch で hero-in を画面いっぱいに伸ばし、バッジ群を下部へ */
+  .hero{align-items:stretch!important}
   .hero-in{
     display:flex!important;
     flex-direction:column!important;
-    min-height:calc(100vh - 64px)!important;
     padding:20px 16px 32px!important;
   }
   .hero-eyebrow{margin-bottom:12px!important}
-  .hero-trust{
-    margin-top:auto!important;
-    padding-top:0!important;
-  }
+  /* バッジ以降をすべて下部へ押し下げ */
+  .hero-trust{margin-top:auto!important}
 }
 </style></body>
 </html>
