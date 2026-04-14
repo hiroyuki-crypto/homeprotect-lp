@@ -599,46 +599,37 @@ upd();
 
 
 
+
+
 <style id="final-override">
 /* ===== PC（768px以上） ===== */
 @media(min-width:768px){
   section.hero { background-color: #f0e8d8 !important; }
   .hero-bg { background-size: 55% auto !important; background-position: right 18% !important; }
   .hero-in h1, .hero-in p, .hero-in li, .hero-in span { color: #2c1a0e !important; text-shadow: none !important; }
-  /* Direct Serviceカード：PC=2列 */
   .direct-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 28px !important; max-width: 900px !important; margin: 0 auto !important; }
-  /* フッター会社名：PCのみ大きく */
-  footer p:first-child { font-size: 26px !important; font-weight: 800 !important; }
+  footer p:first-child { font-size: 26px !important; font-weight: 800 !important; margin-bottom: 12px !important; }
 }
-
-/* ===== モバイル（767px以下） ===== */
+/* ===== スマホ（767px以下） ===== */
 @media(max-width:767px){
-  /* Direct Serviceカード：スマホ=1列 */
-  .direct-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
-  /* フッター会社名：スマホは普通サイズ */
+  .direct-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
   footer p:first-child { font-size: 18px !important; font-weight: 700 !important; }
+  .dc { width: 100% !important; }
 }
-
-/* ===== 見出しの階層（全端末） ===== */
-section h1, div h1 { font-size: 2.6em !important; line-height: 1.4 !important; font-weight: 800 !important; }
-section h2, div h2 { font-size: 2.0em !important; line-height: 1.5 !important; font-weight: 700 !important; }
-section h3, div h3 { font-size: 1.5em !important; line-height: 1.6 !important; font-weight: 700 !important; }
-section h4, div h4 { font-size: 1.2em !important; line-height: 1.6 !important; font-weight: 600 !important; }
-
+/* ===== 見出し（全端末） ===== */
+section h2, .sec h2 { font-size: 2.2em !important; line-height: 1.4 !important; font-weight: 800 !important; }
+section h3, .sec h3 { font-size: 1.6em !important; line-height: 1.5 !important; font-weight: 700 !important; }
+section h4, .sec h4 { font-size: 1.25em !important; font-weight: 700 !important; }
+p.sec-label, .sec-label { font-size: 12px !important; letter-spacing: 0.15em !important; }
+p.sec-lead, .sec-lead { font-size: 1.15em !important; line-height: 1.8 !important; }
 /* ===== 本文（全端末） ===== */
 section p, div p { font-size: 17px !important; line-height: 2.0 !important; }
 section li, div li { font-size: 17px !important; line-height: 2.0 !important; }
-small, .note { font-size: 15px !important; }
-p.sec-label, .sec-label { font-size: 13px !important; letter-spacing: 0.12em !important; text-transform: uppercase; }
-p.sec-lead, .sec-lead { font-size: 1.15em !important; line-height: 1.8 !important; }
+small, .note { font-size: 14px !important; }
+.faq-list { max-width: 960px !important; margin: 0 auto !important; }
+.faq-item { padding: 24px 36px !important; }
 .faq-q, .faq-q * { font-size: 1.1em !important; font-weight: 700 !important; }
 .faq-a, .faq-a * { font-size: 17px !important; line-height: 2.0 !important; }
-
-/* FAQ幅 */
-.faq-list { max-width: 960px !important; width: 100% !important; margin-left: auto !important; margin-right: auto !important; }
-.faq-item { padding: 24px 36px !important; }
-
-/* フッター共通 */
 footer p { font-size: 16px !important; line-height: 1.9 !important; }
 </style>
 </body>
