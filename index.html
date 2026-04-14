@@ -187,16 +187,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
 
 }
 
-/* フォントサイズ修正 */
-p { font-size: 16px !important; line-height: 1.9 !important; }
-p.hero-lead { font-size: 17px !important; }
-p.sec-label { font-size: 14px !important; }
-p.sec-lead  { font-size: 17px !important; }
-p.yt-note   { font-size: 14px !important; }
-p.form-sub  { font-size: 15px !important; }
-p.form-privacy { font-size: 13px !important; }
-small       { font-size: 14px !important; line-height: 1.8 !important; }
-li          { font-size: 16px !important; line-height: 1.9 !important; }
+
 
 /* ヒーロー PC表示修正 */
 @media(min-width:768px){
@@ -215,6 +206,19 @@ li          { font-size: 16px !important; line-height: 1.9 !important; }
     text-shadow: none !important;
   }
 }
+
+/* フォントサイズ修正 v2 */
+body, body * { font-size: inherit; }
+section p, section li, div p, div li,
+.container p, .container li,
+.card p, .card li,
+.reason-card p { font-size: 17px !important; line-height: 2.0 !important; }
+section small, div small, .note, [class*="note"] { font-size: 15px !important; line-height: 1.9 !important; }
+p.sec-label, .sec-label { font-size: 14px !important; }
+p.sec-lead, .sec-lead { font-size: 18px !important; }
+p.hero-lead { font-size: 18px !important; }
+p.yt-note { font-size: 15px !important; }
+p.form-privacy { font-size: 14px !important; }
 </style>
 </head>
 <body>
