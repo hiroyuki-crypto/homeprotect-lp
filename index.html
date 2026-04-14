@@ -680,16 +680,15 @@ footer p{font-size:15px!important;line-height:1.9!important}
   /* ヒーローh1 */
   .hero h1{font-size:1.6rem!important;line-height:1.6!important;margin-bottom:0!important}
 
-  /* ヒーロー：stretch で hero-in を画面いっぱいに伸ばし、バッジ群を下部へ */
-  .hero{align-items:stretch!important}
+  /* ヒーロー：eyebrow+h1はそのまま、バッジ以降を写真の下へ強制移動 */
+  .hero{align-items:flex-start!important}
   .hero-in{
-    display:flex!important;
-    flex-direction:column!important;
-    padding:20px 16px 32px!important;
+    display:block!important;
+    padding:8vh 16px 32px!important;
   }
   .hero-eyebrow{margin-bottom:12px!important}
-  /* バッジ以降をすべて下部へ押し下げ */
-  .hero-trust{margin-top:auto!important}
+  /* 写真（赤ちゃん）が見えるよう25vh分のスペースを作る */
+  .hero-trust{margin-top:25vh!important}
 }
 </style></body>
 </html>
