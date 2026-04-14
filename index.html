@@ -586,5 +586,25 @@ function sub(e){
 }
 upd();
 </script>
+
+<style id="final-override">
+/* ヒーロー PC */
+@media(min-width:768px){
+  section.hero { background-color: #f0e8d8 !important; }
+  .hero-bg {
+    background-size: 55% auto !important;
+    background-position: right 18% !important;
+  }
+  .hero-in h1, .hero-in p, .hero-in li, .hero-in span {
+    color: #2c1a0e !important;
+    text-shadow: none !important;
+  }
+}
+/* フォントサイズ */
+.faq-a, .faq-a p, .faq-a li { font-size: 19px !important; line-height: 2.0 !important; }
+section p, div p { font-size: 19px !important; line-height: 2.1 !important; }
+section li, div li { font-size: 19px !important; line-height: 2.1 !important; }
+small, .note { font-size: 16px !important; }
+</style>
 </body>
 </html>
