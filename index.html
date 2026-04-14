@@ -184,11 +184,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
   .hero-cta-row{flex-direction:column;align-items:flex-start}
 }
 @media(max-width:640px){.hero h1{font-size:1.65rem!important;line-height:1.4!important;word-break:keep-all!important}.hero h1 br{display:inline!important}.hero h1 em{display:inline!important}}@media(max-width:640px){}.hero h1{text-shadow:0 0 8px rgba(0,0,0,1),-1px -1px 0 rgba(0,0,0,0.9),1px -1px 0 rgba(0,0,0,0.9),-1px 1px 0 rgba(0,0,0,0.9),1px 1px 0 rgba(0,0,0,0.9),0 2px 20px rgba(0,0,0,1)}.hero p{text-shadow:0 0 6px rgba(0,0,0,1),-1px -1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8),0 2px 12px rgba(0,0,0,1)}.hero-bg{position:absolute;inset:0;background:url('hero.jpg') center 38%/cover no-repeat;opacity:1}
-@media(min-width:768px){
-  .hero-bg{
-    background-size: auto 120% !important;
-    background-position: center center !important;
-  }
+
 }
 
 /* フォントサイズ修正 */
@@ -201,6 +197,24 @@ p.form-sub  { font-size: 15px !important; }
 p.form-privacy { font-size: 13px !important; }
 small       { font-size: 14px !important; line-height: 1.8 !important; }
 li          { font-size: 16px !important; line-height: 1.9 !important; }
+
+/* ヒーロー PC表示修正 */
+@media(min-width:768px){
+  section.hero { background-color: #f0e8d8 !important; }
+  .hero-bg {
+    background-size: 55% auto !important;
+    background-position: right 18% !important;
+    opacity: 1 !important;
+  }
+  .hero-in h1,
+  .hero-in h2,
+  .hero-in p,
+  .hero-in span,
+  .hero-in li {
+    color: #2c1a0e !important;
+    text-shadow: none !important;
+  }
+}
 </style>
 </head>
 <body>
