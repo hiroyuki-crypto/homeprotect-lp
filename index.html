@@ -237,15 +237,15 @@ p.form-privacy { font-size: 16px !important; }
   <div class="hero-in">
     <div class="hero-eyebrow">大阪・奈良・和歌山・兵庫 対応</div>
     <h1>工務店を通さず、<br><em>直接施工だから<br>正直な価格で届けられる。</em></h1>
+    <div class="hero-cta-row">
+      <a href="#simulator" class="btn-main">今すぐ金額を確認する</a>
+      <div class="hero-tel-block">お電話でのご相談<br><strong><a href="tel:0725904466" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1c3a2b;text-decoration:none;padding:12px 24px;border-radius:50px;font-size:1.1rem;font-weight:900;letter-spacing:0.05em">📞 0725-90-4466</a></strong></div>
+    </div>
     <div class="hero-trust">
       <div class="tbadge">🌿 人体・ペットに安全な自然素材</div>
       <div class="tbadge">♾️ 半永久効果・再処理不要</div>
       <div class="tbadge">🏛️ JBTA認定施工店</div>
       <div class="tbadge">🚫 訪問販売・飛び込み営業一切なし</div>
-    </div>
-    <div class="hero-cta-row">
-      <a href="#simulator" class="btn-main">今すぐ金額を確認する</a>
-      <div class="hero-tel-block">お電話でのご相談<br><strong><a href="tel:0725904466" style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1c3a2b;text-decoration:none;padding:12px 24px;border-radius:50px;font-size:1.1rem;font-weight:900;letter-spacing:0.05em">📞 0725-90-4466</a></strong></div>
     </div>
   </div>
 </section>
@@ -689,8 +689,12 @@ footer p{font-size:15px!important;line-height:1.9!important}
     padding:8vh 16px 32px!important;
   }
   .hero-eyebrow{margin-bottom:12px!important}
-  /* 写真（赤ちゃん）が見えるよう30vh分のスペースを作る */
-  .hero-trust{margin-top:30vh!important}
+  /* ボタンと電話を横並びに */
+  .hero-cta-row{flex-direction:row!important;flex-wrap:wrap!important;align-items:center!important;gap:10px!important;margin-top:30vh!important}
+  .btn-main{font-size:15px!important;padding:14px 18px!important}
+  .hero-tel-block{font-size:13px!important}
+  /* 4つのバッジを下へ */
+  .hero-trust{margin-top:16px!important}
 }
 </style></body>
 </html>
