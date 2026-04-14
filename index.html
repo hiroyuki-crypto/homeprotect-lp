@@ -679,6 +679,15 @@ footer p{font-size:15px!important;line-height:1.9!important}
 
   /* ヒーローh1 */
   .hero h1{font-size:1.6rem!important;line-height:1.6!important}
+
+  /* ヒーロー：h1の下に写真が見えるよう、バッジ以降を画面下部へ押し下げ */
+  .hero-in{
+    display:flex!important;
+    flex-direction:column!important;
+    min-height:calc(100vh - 64px)!important;
+    padding-bottom:32px!important;
+  }
+  .hero-trust{margin-top:auto!important}
 }
 </style></body>
 </html>
