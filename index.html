@@ -183,7 +183,7 @@ footer a{color:rgba(255,255,255,0.6);text-decoration:none}
   .jbta-box{flex-direction:column}
   .hero-cta-row{flex-direction:column;align-items:flex-start}
 }
-@media(max-width:640px){.hero h1{font-size:1.65rem!important;line-height: 2.0!important;word-break:keep-all!important}.hero h1 br{display:inline!important}.hero h1 em{display:inline!important}}@media(max-width:640px){}.hero h1{text-shadow:0 0 8px rgba(0,0,0,1),-1px -1px 0 rgba(0,0,0,0.9),1px -1px 0 rgba(0,0,0,0.9),-1px 1px 0 rgba(0,0,0,0.9),1px 1px 0 rgba(0,0,0,0.9),0 2px 20px rgba(0,0,0,1)}.hero p{text-shadow:0 0 6px rgba(0,0,0,1),-1px -1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8),0 2px 12px rgba(0,0,0,1)}.hero-bg{position:absolute;inset:0;background: url('hero.jpg') right 18% / 55% auto no-repeat;opacity:1}
+@media(max-width:640px){.hero h1{font-size:1.65rem!important;line-height: 2.0!important;word-break:keep-all!important}.hero h1 br{display:inline!important}.hero h1 em{display:inline!important}}@media(max-width:640px){}.hero h1{text-shadow:0 0 8px rgba(0,0,0,1),-1px -1px 0 rgba(0,0,0,0.9),1px -1px 0 rgba(0,0,0,0.9),-1px 1px 0 rgba(0,0,0,0.9),1px 1px 0 rgba(0,0,0,0.9),0 2px 20px rgba(0,0,0,1)}.hero p{text-shadow:0 0 6px rgba(0,0,0,1),-1px -1px 0 rgba(0,0,0,0.8),1px 1px 0 rgba(0,0,0,0.8),0 2px 12px rgba(0,0,0,1)}.hero-bg{position:absolute;inset:0;background: url('hero.jpg') center 38% / cover no-repeat;opacity:1}
 
 }
 
@@ -597,36 +597,49 @@ upd();
 
 
 
+
+
 <style id="final-override">
-/* ヒーロー PC */
+/* ===== PC（768px以上） ===== */
 @media(min-width:768px){
   section.hero { background-color: #f0e8d8 !important; }
   .hero-bg { background-size: 55% auto !important; background-position: right 18% !important; }
   .hero-in h1, .hero-in p, .hero-in li, .hero-in span { color: #2c1a0e !important; text-shadow: none !important; }
+  /* Direct Serviceカード：PC=2列 */
+  .direct-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 28px !important; max-width: 900px !important; margin: 0 auto !important; }
+  /* フッター会社名：PCのみ大きく */
+  footer p:first-child { font-size: 26px !important; font-weight: 800 !important; }
 }
-/* フォント全体 */
-p.hero-lead { font-size: 21px !important; line-height: 2.1 !important; }
-p.sec-label, .sec-label { font-size: 16px !important; }
-p.sec-lead, .sec-lead { font-size: 22px !important; line-height: 1.8 !important; }
-section p, div p { font-size: 19px !important; line-height: 2.1 !important; }
-section li, div li { font-size: 19px !important; line-height: 2.1 !important; }
-small, .note { font-size: 16px !important; }
-footer p { font-size: 17px !important; line-height: 2.0 !important; }
-footer p:first-child { font-size: 26px !important; font-weight: 800 !important; margin-bottom: 12px !important; }
-/* FAQ */
+
+/* ===== モバイル（767px以下） ===== */
+@media(max-width:767px){
+  /* Direct Serviceカード：スマホ=1列 */
+  .direct-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+  /* フッター会社名：スマホは普通サイズ */
+  footer p:first-child { font-size: 18px !important; font-weight: 700 !important; }
+}
+
+/* ===== 見出しの階層（全端末） ===== */
+section h1, div h1 { font-size: 2.6em !important; line-height: 1.4 !important; font-weight: 800 !important; }
+section h2, div h2 { font-size: 2.0em !important; line-height: 1.5 !important; font-weight: 700 !important; }
+section h3, div h3 { font-size: 1.5em !important; line-height: 1.6 !important; font-weight: 700 !important; }
+section h4, div h4 { font-size: 1.2em !important; line-height: 1.6 !important; font-weight: 600 !important; }
+
+/* ===== 本文（全端末） ===== */
+section p, div p { font-size: 17px !important; line-height: 2.0 !important; }
+section li, div li { font-size: 17px !important; line-height: 2.0 !important; }
+small, .note { font-size: 15px !important; }
+p.sec-label, .sec-label { font-size: 13px !important; letter-spacing: 0.12em !important; text-transform: uppercase; }
+p.sec-lead, .sec-lead { font-size: 1.15em !important; line-height: 1.8 !important; }
+.faq-q, .faq-q * { font-size: 1.1em !important; font-weight: 700 !important; }
+.faq-a, .faq-a * { font-size: 17px !important; line-height: 2.0 !important; }
+
+/* FAQ幅 */
 .faq-list { max-width: 960px !important; width: 100% !important; margin-left: auto !important; margin-right: auto !important; }
-.faq-item { padding: 28px 40px !important; }
-.faq-q, .faq-q * { font-size: 20px !important; font-weight: 700 !important; line-height: 1.8 !important; }
-.faq-a, .faq-a * { font-size: 19px !important; line-height: 2.1 !important; }
-/* Direct Service：4枚を2×2グリッドに */
-.direct-grid {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-  max-width: 900px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-.dc { width: 100% !important; }
+.faq-item { padding: 24px 36px !important; }
+
+/* フッター共通 */
+footer p { font-size: 16px !important; line-height: 1.9 !important; }
 </style>
 </body>
 </html>
