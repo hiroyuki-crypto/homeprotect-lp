@@ -678,16 +678,21 @@ footer p{font-size:15px!important;line-height:1.9!important}
   .sim-sec{padding:56px 16px!important}
 
   /* ヒーローh1 */
-  .hero h1{font-size:1.6rem!important;line-height:1.6!important}
+  .hero h1{font-size:1.6rem!important;line-height:1.6!important;margin-bottom:0!important}
 
-  /* ヒーロー：h1の下に写真が見えるよう、バッジ以降を画面下部へ押し下げ */
+  /* ヒーロー：上部h1・下部バッジ群に分割して写真を見せる */
+  .hero{align-items:flex-start!important}
   .hero-in{
     display:flex!important;
     flex-direction:column!important;
     min-height:calc(100vh - 64px)!important;
-    padding-bottom:32px!important;
+    padding:20px 16px 32px!important;
   }
-  .hero-trust{margin-top:auto!important}
+  .hero-eyebrow{margin-bottom:12px!important}
+  .hero-trust{
+    margin-top:auto!important;
+    padding-top:0!important;
+  }
 }
 </style></body>
 </html>
