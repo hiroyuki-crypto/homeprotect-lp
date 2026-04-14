@@ -56,7 +56,7 @@ h1 em{color:var(--bl);font-style:normal}
 .warn-body{font-size: 20px;color:var(--tm);line-height:2;padding-left:40px}
 .warn-src{font-size: 19px;color:var(--tl);margin-top:6px;padding-left:40px}
 /* DIRECT */
-.direct-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:40px}
+.direct-grid{display:grid;grid-template-columns: repeat(2, 1fr);gap: 28px;margin-top:40px}
 .dc{background:var(--wh);border-radius:12px;padding:28px;border-left:4px solid var(--gm);box-shadow:0 2px 12px rgba(0,0,0,0.05)}
 .dc-num{font-size: 19px;font-weight:700;color:var(--gl);letter-spacing:0.1em;margin-bottom:8px}
 .dc-title{font-size: 19px;font-weight:700;margin-bottom:10px}
@@ -620,8 +620,8 @@ footer p:first-child { font-size: 26px !important; font-weight: 800 !important; 
 .faq-a, .faq-a * { font-size: 19px !important; line-height: 2.1 !important; }
 /* Direct Service：4枚を2×2グリッドに */
 .direct-grid {
-  grid-template-columns: repeat(2, 1fr) !important;
-  gap: 28px !important;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
   max-width: 900px !important;
   margin-left: auto !important;
   margin-right: auto !important;
