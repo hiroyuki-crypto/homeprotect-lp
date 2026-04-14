@@ -698,17 +698,17 @@ footer p{font-size:15px!important;line-height:1.9!important}
     color:#f5c97a!important;
   }
 
-  /* ヒーロー：バッジを最下部へ */
-  .hero{align-items:stretch!important}
+  /* ヒーロー：バッジをabsoluteで底に固定 */
   .hero-in{
-    display:flex!important;
-    flex-direction:column!important;
+    position:relative!important;
     padding:5vh 16px 0!important;
     min-height:calc(100vh - 64px)!important;
   }
   .hero-trust{
-    margin-top:auto!important;
-    padding:0 0 20px!important;
+    position:absolute!important;
+    bottom:20px!important;
+    left:16px!important;
+    right:16px!important;
   }
 }
 </style></body>
