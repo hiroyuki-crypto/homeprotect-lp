@@ -700,10 +700,12 @@ footer p{font-size:15px!important;line-height:1.9!important}
   }
   .hero h1 em{color:#f5c97a!important}
 
-  /* ヒーロー：hero-inをstaticにして.heroを基準にバッジを底へ固定 */
+  /* ヒーロー：h1を上部固定、hero-inをposition:relativeで全高確保、バッジを底へ */
+  .hero{align-items:flex-start!important}
   .hero-in{
-    position:static!important;
+    position:relative!important;
     padding:5vh 16px 0!important;
+    min-height:calc(100vh - 64px)!important;
   }
   .hero-trust{
     position:absolute!important;
