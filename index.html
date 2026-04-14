@@ -603,30 +603,82 @@ upd();
 
 
 <style id="final-override">
+/* ===== 全体共通 ===== */
+/* 見出しの自然な折り返し */
+h1,h2,h3,h4{text-wrap:balance}
+/* 本文の孤立単語防止 */
+p{text-wrap:pretty}
+
+/* 見出し・本文サイズ */
+section h2,.sec h2{font-size:2.0em!important;line-height:1.45!important;font-weight:800!important}
+section h3,.sec h3{font-size:1.5em!important;line-height:1.5!important;font-weight:700!important}
+section h4,.sec h4{font-size:1.2em!important;font-weight:700!important}
+p.sec-label,.sec-label{font-size:12px!important;letter-spacing:.15em!important}
+p.sec-lead,.sec-lead{font-size:1.05em!important;line-height:1.9!important}
+section p,div p{font-size:17px!important;line-height:2.0!important}
+section li,div li{font-size:17px!important;line-height:2.0!important}
+small,.note{font-size:14px!important}
+.faq-q,.faq-q *{font-size:1.05em!important;font-weight:700!important;line-height:1.6!important}
+.faq-a,.faq-a *{font-size:16px!important;line-height:2.0!important}
+footer p{font-size:15px!important;line-height:1.9!important}
+
+/* FAQ */
+.faq-list{max-width:960px!important;margin:0 auto!important}
+
+/* ===== PC（768px以上）===== */
 @media(min-width:768px){
   section.hero{background-color:#f0e8d8!important}
   .hero-bg{background-size:55% auto!important;background-position:right 18%!important}
   .hero-in h1,.hero-in p,.hero-in li,.hero-in span{color:#2c1a0e!important;text-shadow:none!important}
   .direct-grid{grid-template-columns:repeat(2,1fr)!important;gap:28px!important;max-width:900px!important;margin:0 auto!important}
   footer p:first-child{font-size:26px!important;font-weight:800!important;margin-bottom:12px!important}
+  .faq-item{padding:24px 36px!important}
 }
+
+/* ===== スマホ（767px以下）===== */
 @media(max-width:767px){
+  /* 見出しをモバイル向けに縮小 */
+  section h2,.sec h2{font-size:1.45em!important;line-height:1.5!important}
+  section h3,.sec h3{font-size:1.25em!important}
+
+  /* Direct Serviceカード1列 */
   .direct-grid{grid-template-columns:1fr!important;gap:16px!important}
   .dc{width:100%!important}
+
+  /* フッター会社名 */
   footer p:first-child{font-size:18px!important;font-weight:700!important}
+
+  /* FAQ: 横paddingをゼロに、縦は確保 */
+  .faq-item{padding:20px 0!important}
+  .faq-q{font-size:15px!important;line-height:1.6!important}
+  .faq-a{font-size:15px!important;padding-left:8px!important}
+
+  /* 比較表: 3列を読める文字サイズに */
+  .cmp-table{font-size:12px!important}
+  .cmp-table th,.cmp-table td{padding:8px 5px!important;font-size:12px!important;line-height:1.5!important}
+  .cmp-table th:first-child{width:28%!important}
+  .ck,.cx{font-size:12px!important}
+
+  /* 警告ボックス: 左paddingを詰める */
+  .warn-body,.warn-src{padding-left:16px!important;font-size:15px!important}
+  .warn-title{font-size:15px!important;line-height:1.6!important}
+
+  /* 価格参考表 */
+  .p-ref table td{font-size:12px!important}
+  .p-ref{padding:14px 14px!important}
+
+  /* フォームwrap */
+  .form-wrap{padding:24px 16px!important}
+
+  /* セクション全体の横padding詰め */
+  .sec{padding:56px 16px!important}
+  .warning{padding:56px 16px!important}
+  .trust-sec{padding:56px 16px!important}
+  .form-sec{padding:56px 16px!important}
+  .sim-sec{padding:56px 16px!important}
+
+  /* ヒーローh1 */
+  .hero h1{font-size:1.6rem!important;line-height:1.6!important}
 }
-section h2,.sec h2{font-size:2.2em!important;line-height:1.4!important;font-weight:800!important}
-section h3,.sec h3{font-size:1.6em!important;line-height:1.5!important;font-weight:700!important}
-section h4,.sec h4{font-size:1.25em!important;font-weight:700!important}
-p.sec-label,.sec-label{font-size:12px!important;letter-spacing:.15em!important}
-p.sec-lead,.sec-lead{font-size:1.15em!important;line-height:1.8!important}
-section p,div p{font-size:17px!important;line-height:2.0!important}
-section li,div li{font-size:17px!important;line-height:2.0!important}
-small,.note{font-size:14px!important}
-.faq-list{max-width:960px!important;margin:0 auto!important}
-.faq-item{padding:24px 36px!important}
-.faq-q,.faq-q *{font-size:1.1em!important;font-weight:700!important}
-.faq-a,.faq-a *{font-size:17px!important;line-height:2.0!important}
-footer p{font-size:16px!important;line-height:1.9!important}
 </style></body>
 </html>
