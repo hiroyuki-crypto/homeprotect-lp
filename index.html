@@ -593,6 +593,8 @@ upd();
 
 
 
+
+
 <style id="final-override">
 /* ヒーロー PC */
 @media(min-width:768px){
@@ -607,18 +609,35 @@ p.sec-lead, .sec-lead { font-size: 22px !important; line-height: 1.8 !important;
 section p, div p { font-size: 19px !important; line-height: 2.1 !important; }
 section li, div li { font-size: 19px !important; line-height: 2.1 !important; }
 small, .note { font-size: 16px !important; }
-footer p, .footer p { font-size: 17px !important; line-height: 2.0 !important; }
+footer p { font-size: 17px !important; line-height: 2.0 !important; }
 footer p:first-child { font-size: 26px !important; font-weight: 800 !important; margin-bottom: 12px !important; }
-/* FAQ：幅を広げて中央揃え */
-.faq-list {
-  max-width: 960px !important;
-  width: 100% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
+
+/* FAQ */
+.faq-list { max-width: 960px !important; width: 100% !important; margin-left: auto !important; margin-right: auto !important; }
 .faq-item { padding: 28px 40px !important; }
 .faq-q, .faq-q * { font-size: 20px !important; font-weight: 700 !important; line-height: 1.8 !important; }
 .faq-a, .faq-a * { font-size: 19px !important; line-height: 2.1 !important; }
+
+/* Direct Service：横幅を広げる */
+.merit-sec .in,
+.direct-sec .in,
+section.merit .in,
+section.direct .in { max-width: 1100px !important; }
+
+/* メリットカード：4枚を2×2グリッドに */
+.merit-grid,
+.merit-cards,
+.merit-list,
+[class*="merit"] > ul,
+[class*="merit"] > div { 
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 24px !important;
+}
+.merit-card,
+.merit-item,
+[class*="merit-card"],
+[class*="merit-item"] { width: 100% !important; }
 </style>
 </body>
 </html>
