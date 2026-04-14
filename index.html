@@ -685,30 +685,32 @@ footer p{font-size:15px!important;line-height:1.9!important}
   .form-sec{padding:56px 16px!important}
   .sim-sec{padding:56px 16px!important}
 
-  /* ヒーローh1：大きく・くっきり目立たせる */
+  /* ヘッダー：ボタン・ロゴを画面幅に収める */
+  .h-cta{font-size:13px!important;padding:8px 12px!important}
+  .logo{font-size:14px!important}
+  .logo span{font-size:12px!important}
+
+  /* ヒーローh1：収まるサイズで目立たせる */
   .hero h1{
-    font-size:2.2rem!important;
-    line-height:1.45!important;
+    font-size:1.75rem!important;
+    line-height:1.5!important;
     margin-bottom:0!important;
     margin-top:0!important;
     text-shadow:0 2px 16px rgba(0,0,0,0.9),0 0 40px rgba(0,0,0,0.7)!important;
   }
-  .hero h1 em{
-    font-size:1em!important;
-    color:#f5c97a!important;
-  }
+  .hero h1 em{color:#f5c97a!important}
 
-  /* ヒーロー：バッジをabsoluteで底に固定 */
+  /* ヒーロー：hero-inをstaticにして.heroを基準にバッジを底へ固定 */
   .hero-in{
-    position:relative!important;
+    position:static!important;
     padding:5vh 16px 0!important;
-    min-height:calc(100vh - 64px)!important;
   }
   .hero-trust{
     position:absolute!important;
     bottom:20px!important;
     left:16px!important;
     right:16px!important;
+    z-index:3!important;
   }
 }
 </style></body>
