@@ -135,7 +135,12 @@ h1 em{color:var(--bl);font-style:normal}
 /* FLOW */
 .flow-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0;margin-top:48px}
 .flow-step{text-align:center;padding:28px 20px;position:relative}
-.flow-step:not(:last-child)::after{content:'→';position:absolute;right:-10px;top:44px;color:var(--bl);font-size:20px}
+.flow-step:not(:last-child)::after{content:'→';position:absolute;right:-10px;top:90px;color:var(--bl);font-size:20px}
+.flow-chara{width:110px;height:110px;object-fit:contain;display:block;margin:0 auto 8px}
+/* CHARA SIDE */
+.chara-side{display:flex;align-items:center;gap:32px;margin-top:40px}
+.chara-side img{width:160px;height:160px;object-fit:contain;flex-shrink:0}
+.chara-side-r{display:flex;align-items:center;gap:32px;flex-direction:row-reverse}
 .flow-num{width:52px;height:52px;background:var(--gd);color:var(--wh);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;margin:0 auto 14px}
 .flow-ttl{font-size: 18px;font-weight:700;margin-bottom:6px}
 .flow-desc{font-size: 19px;color:var(--tm);line-height: 2.0}
@@ -342,8 +347,13 @@ p.form-privacy { font-size: 16px !important; }
 <section class="sec" style="background:var(--wh)">
   <div class="in">
     <p class="sec-label">Direct Service</p>
-    <h2 class="sec-title">「直接責任施工」が<br><span style="color:var(--gm)">できる理由</span></h2>
-    <p class="sec-lead">当社は元々、地盤調査の専門会社として住宅基礎に関わり続けてきました。その知識と実績をもとに、JBTA認定のホウ酸施工店として直接施工を行っています。</p>
+    <div style="display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap">
+      <div style="flex:1;min-width:260px">
+        <h2 class="sec-title">「直接責任施工」が<br><span style="color:var(--gm)">できる理由</span></h2>
+        <p class="sec-lead">当社は元々、地盤調査の専門会社として住宅基礎に関わり続けてきました。その知識と実績をもとに、JBTA認定のホウ酸施工店として直接施工を行っています。</p>
+      </div>
+      <img src="chara1.png" alt="施工スタッフ" style="width:160px;height:160px;object-fit:contain;flex-shrink:0;margin-bottom:-8px">
+    </div>
     <div class="direct-grid">
       <div class="dc">
         <div class="dc-num">01 マージンカット</div>
@@ -437,6 +447,9 @@ p.form-privacy { font-size: 16px !important; }
     <p class="sec-label">Price</p>
     <h2 class="sec-title">明確な料金、<br><span>追加費用は一切なし</span></h2>
     <p class="sec-lead">「〜円から」という曖昧な表示はしません。施工費・10年保証・5年後の無料点検、すべて込みの価格です。</p>
+    <div style="display:flex;align-items:flex-end;justify-content:flex-end;margin-bottom:-20px;margin-right:16px">
+      <img src="chara3.png" alt="施工スタッフ" style="width:140px;height:140px;object-fit:contain">
+    </div>
     <div class="price-single">
       <div class="price-card">
         <div class="p-tag">ホウ酸防蟻施工　コミコミプラン</div>
@@ -497,10 +510,10 @@ p.form-privacy { font-size: 16px !important; }
     <p class="sec-label">Flow</p>
     <h2 class="sec-title">申し込みから施工まで<br><span>最短1週間で完了</span></h2>
     <div class="flow-steps">
-      <div class="flow-step"><div class="flow-num">1</div><div class="flow-ttl">フォームで申し込み</div><div class="flow-desc">お家の情報を入力するだけ。24時間受付中。</div><span class="flow-tag">最短即日折り返し</span></div>
-      <div class="flow-step"><div class="flow-num">2</div><div class="flow-ttl">日程調整・確定</div><div class="flow-desc">ご希望の日程を確認。ご要望の方はZoom相談も対応。</div><span class="flow-tag">電話・メール・Zoom</span></div>
-      <div class="flow-step"><div class="flow-num">3</div><div class="flow-ttl">施工当日・完了</div><div class="flow-desc">床下確認から施工まで当日完結。写真付きレポートをお渡しします。</div><span class="flow-tag">当日完結</span></div>
-      <div class="flow-step"><div class="flow-num">4</div><div class="flow-ttl">10年保証スタート</div><div class="flow-desc">施工完了後すぐ10年保証開始。5年後に無料の定期点検を実施します。</div><span class="flow-tag">10年保証・5年後点検無料</span></div>
+      <div class="flow-step"><img src="chara2.png" class="flow-chara" alt=""><div class="flow-num">1</div><div class="flow-ttl">フォームで申し込み</div><div class="flow-desc">お家の情報を入力するだけ。24時間受付中。</div><span class="flow-tag">最短即日折り返し</span></div>
+      <div class="flow-step"><img src="chara4.png" class="flow-chara" alt=""><div class="flow-num">2</div><div class="flow-ttl">日程調整・確定</div><div class="flow-desc">ご希望の日程を確認。ご要望の方はZoom相談も対応。</div><span class="flow-tag">電話・メール・Zoom</span></div>
+      <div class="flow-step"><img src="chara5.png" class="flow-chara" alt=""><div class="flow-num">3</div><div class="flow-ttl">施工当日・完了</div><div class="flow-desc">床下確認から施工まで当日完結。写真付きレポートをお渡しします。</div><span class="flow-tag">当日完結</span></div>
+      <div class="flow-step"><img src="chara6.png" class="flow-chara" alt=""><div class="flow-num">4</div><div class="flow-ttl">10年保証スタート</div><div class="flow-desc">施工完了後すぐ10年保証開始。5年後に無料の定期点検を実施します。</div><span class="flow-tag">10年保証・5年後点検無料</span></div>
     </div>
   </div>
 </section>
@@ -728,6 +741,10 @@ footer a{color:#2a5008!important}
 
   /* フォームwrap */
   .form-wrap{padding:24px 16px!important}
+
+  /* キャラクター */
+  .flow-chara{width:80px!important;height:80px!important}
+  .chara-side img{width:110px!important;height:110px!important}
 
   /* セクション全体の横padding詰め */
   .sec{padding:56px 16px!important}
