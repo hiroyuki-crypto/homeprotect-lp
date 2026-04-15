@@ -727,7 +727,7 @@ footer a{color:#2a5008!important}
   /* ヒーローPC: 左テキスト・右写真の横並びレイアウト */
   .hero{
     display:grid!important;
-    grid-template-columns:1fr 1fr!important;
+    grid-template-columns:48% 52%!important;
     grid-template-rows:1fr auto!important;
     padding-top:84px!important;
     min-height:calc(100vh - 84px)!important;
@@ -740,8 +740,17 @@ footer a{color:#2a5008!important}
   }
   .hero-text-panel > div{
     max-width:none!important;
-    padding:3rem!important;
+    padding:2.5rem 2rem 2.5rem 2.5rem!important;
     width:100%!important;
+  }
+  /* PC：h1を大きく・サブコピーも拡大 */
+  .hero-text-panel h1{
+    font-size:clamp(26px,2.8vw,42px)!important;
+    line-height:1.45!important;
+  }
+  .hero-text-panel p{
+    font-size:16px!important;
+    line-height:1.8!important;
   }
   .hero-photo-wrap{
     grid-column:2!important;
@@ -762,9 +771,9 @@ footer a{color:#2a5008!important}
     grid-row:2!important;
     max-width:none!important;
     margin:0!important;
-    padding:16px 3rem!important;
+    padding:14px 2rem 14px 2.5rem!important;
     grid-template-columns:1fr 1fr!important;
-    gap:10px!important;
+    gap:8px!important;
   }
 }
 
