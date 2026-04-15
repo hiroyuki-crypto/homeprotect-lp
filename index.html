@@ -26,7 +26,7 @@ header{position:fixed;top:0;width:100%;z-index:100;background:rgba(141,198,63,0.
 .hero{display:block;padding-top:64px;background:none;overflow:visible;min-height:unset}
 .hero-text-panel{background:#faf6f1}
 .hero-photo-wrap{line-height:0}
-.hero-photo-img{width:100%;display:block;object-fit:cover;object-position:center center;max-height:60vw;min-height:300px}
+.hero-photo-img{width:100%;display:block;object-fit:cover;object-position:center top;aspect-ratio:4/3;min-height:360px}
 .hero-badges-wrap{background:#faf6f1;padding:16px 24px;display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:700px;margin:0 auto}
 
 .hero-grid{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.015) 60px,rgba(255,255,255,0.015) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.015) 60px,rgba(255,255,255,0.015) 61px)}
@@ -242,8 +242,8 @@ p.form-privacy { font-size: 16px !important; }
     <div style="max-width:680px;margin:0 auto;padding:2rem 1.5rem">
 
       <!-- ① WARNINGラベル -->
-      <div style="display:inline-flex;align-items:center;gap:6px;background:#C0392B;color:#fff;font-size:13px;font-weight:700;letter-spacing:0.08em;padding:5px 14px;border-radius:4px;margin-bottom:0;position:relative;z-index:2">
-        <span style="color:#F9A825;font-size:15px">⚠</span> WARNING
+      <div style="display:inline-flex;align-items:center;gap:8px;background:#FFD600;color:#000;font-size:15px;font-weight:700;letter-spacing:0.08em;padding:8px 20px;border-radius:4px;margin-bottom:0;position:relative;z-index:2;border:2px solid #000">
+        <span style="font-size:18px">⚠</span> WARNING
       </div>
 
       <!-- ② 赤い警告ボックス（メインコピー） -->
@@ -253,7 +253,7 @@ p.form-privacy { font-size: 16px !important; }
 
       <!-- ③ 黄色帯サブコピー（ソリッド背景） -->
       <div style="background:#FFF8E1;border-left:4px solid #F9A825;border-radius:0 8px 8px 0;padding:12px 16px;margin-top:12px">
-        <p style="margin:0;color:#4E342E;font-size:14px;font-weight:400;line-height:1.7"><strong style="color:#E65100;font-weight:700">ホウ酸防蟻</strong>なら、一度の施工で半永久。人体・ペットに安全な自然素材です。</p>
+        <p style="margin:0;color:#4E342E;font-size:14px;font-weight:400;line-height:1.7;word-break:keep-all"><strong style="color:#E65100;font-weight:700">ホウ酸防蟻</strong>なら、一度の施工で半永久。<br>人体・ペットに安全な自然素材です。</p>
       </div>
 
     </div>
