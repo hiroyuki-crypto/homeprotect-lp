@@ -26,7 +26,7 @@ header{position:fixed;top:0;width:100%;z-index:100;background:rgba(141,198,63,0.
 .hero{display:block;padding-top:64px;background:none;overflow:visible;min-height:unset}
 .hero-text-panel{background:#faf6f1}
 .hero-photo-wrap{line-height:0}
-.hero-photo-img{width:100%;display:block;object-fit:cover;object-position:center top;aspect-ratio:4/3;min-height:360px}
+.hero-photo-img{width:100%;height:auto;display:block}
 .hero-badges-wrap{background:#faf6f1;padding:16px 24px;display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:700px;margin:0 auto}
 
 .hero-grid{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.015) 60px,rgba(255,255,255,0.015) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.015) 60px,rgba(255,255,255,0.015) 61px)}
@@ -720,7 +720,6 @@ footer a{color:#2a5008!important}
 /* ===== PC（768px以上）===== */
 @media(min-width:768px){
   .hero-h1{font-size:2.4rem!important}
-  .hero-photo-img{max-height:480px!important}
   .hero-badges-wrap{padding:20px 24px!important}
   .direct-grid{grid-template-columns:repeat(2,1fr)!important;gap:28px!important;max-width:900px!important;margin:0 auto!important}
   footer p:first-child{font-size:26px!important;font-weight:800!important;margin-bottom:12px!important}
