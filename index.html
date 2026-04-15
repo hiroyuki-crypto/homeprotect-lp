@@ -732,25 +732,37 @@ footer a{color:#2a5008!important}
     padding-top:84px!important;
     min-height:calc(100vh - 84px)!important;
   }
+  /* 左カラム：上揃えで余白を均等に */
   .hero-text-panel{
     grid-column:1!important;
     grid-row:1!important;
     display:flex!important;
-    align-items:center!important;
+    align-items:flex-start!important;
+    padding-top:5vh!important;
   }
   .hero-text-panel > div{
     max-width:none!important;
-    padding:2.5rem 2rem 2.5rem 2.5rem!important;
+    padding:0 2.5rem 2rem 2.5rem!important;
     width:100%!important;
   }
-  /* PC：h1を大きく・サブコピーも拡大 */
+  /* PC：h1を大きく */
   .hero-text-panel h1{
-    font-size:clamp(26px,2.8vw,42px)!important;
-    line-height:1.45!important;
+    font-size:clamp(28px,3.2vw,48px)!important;
+    line-height:1.4!important;
+    white-space:normal!important;
   }
+  /* PC：サブコピーを幅いっぱいに＋文字大きく */
   .hero-text-panel p{
-    font-size:16px!important;
-    line-height:1.8!important;
+    font-size:17px!important;
+    line-height:1.85!important;
+  }
+  /* PC：赤ボックス・黄色ボックスの余白を広げて存在感を出す */
+  .hero-text-panel > div > div:nth-child(2){
+    padding:1.4rem 2rem!important;
+    margin-bottom:16px!important;
+  }
+  .hero-text-panel > div > div:nth-child(3){
+    padding:16px 20px!important;
   }
   .hero-photo-wrap{
     grid-column:2!important;
@@ -766,14 +778,20 @@ footer a{color:#2a5008!important}
     object-fit:cover!important;
     object-position:center 20%!important;
   }
+  /* バッジを大きく */
   .hero-badges-wrap{
     grid-column:1!important;
     grid-row:2!important;
     max-width:none!important;
     margin:0!important;
-    padding:14px 2rem 14px 2.5rem!important;
+    padding:16px 2.5rem!important;
     grid-template-columns:1fr 1fr!important;
-    gap:8px!important;
+    gap:10px!important;
+  }
+  .hero-badges-wrap .tbadge{
+    font-size:15px!important;
+    padding:13px 16px!important;
+    justify-content:flex-start!important;
   }
 }
 
