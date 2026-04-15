@@ -23,7 +23,11 @@ header{position:fixed;top:0;width:100%;z-index:100;background:rgba(141,198,63,0.
 .h-tel{color:rgba(255,255,255,0.7);font-size: 19px;text-align:right}
 .h-tel strong{color:var(--wh);font-size: 19px;display:block}
 .h-cta{background:var(--ac);color:var(--wh);padding:10px 20px;border-radius:4px;text-decoration:none;font-size: 19px;font-weight:700;white-space:nowrap;flex-shrink:0}
-.hero{min-height:100vh;background:var(--gd);position:relative;display:flex;align-items:center;overflow:hidden;padding-top:64px}
+.hero{display:block;padding-top:64px;background:none;overflow:visible;min-height:unset}
+.hero-text-panel{background:#faf6f1}
+.hero-photo-wrap{line-height:0}
+.hero-photo-img{width:100%;display:block;object-fit:cover;object-position:center 30%;max-height:56vw;min-height:220px}
+.hero-badges-wrap{background:#faf6f1;padding:16px 24px;display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:700px;margin:0 auto}
 
 .hero-grid{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(255,255,255,0.015) 60px,rgba(255,255,255,0.015) 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(255,255,255,0.015) 60px,rgba(255,255,255,0.015) 61px)}
 .hero-in{position:relative;z-index:2;width:100%;max-width:1100px;margin:0 auto;padding:60px 24px}
@@ -244,25 +248,29 @@ p.form-privacy { font-size: 16px !important; }
 </header>
 
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-in">
-    <div style="background:rgba(255,255,255,0.78);padding:1.5rem 2rem;border-radius:16px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);width:fit-content;max-width:560px">
+  <!-- 上段：テキストエリア（ソリッド背景） -->
+  <div class="hero-text-panel">
+    <div style="max-width:700px;margin:0 auto;padding:2rem 1.5rem 1.5rem">
       <div style="display:inline-flex;align-items:center;gap:6px;background:#C0392B;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.12em;padding:5px 12px;border-radius:4px;margin-bottom:14px">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><path d="M12 2L1 21h22L12 2z" fill="#fff" stroke="#fff" stroke-width="1"/><path d="M12 9v5M12 17h.01" stroke="#C0392B" stroke-width="2" stroke-linecap="round"/></svg>
         WARNING
       </div>
-      <h1 style="-webkit-text-stroke:0!important;text-shadow:none!important;color:#B71C1C!important">5年ごとに撒かれる<wbr><span style="white-space:nowrap">合成殺虫剤、</span><br>家族が吸っています。</h1>
-      <div style="display:block;background:rgba(255,193,7,0.22);border-left:4px solid #F9A825;border-radius:0 8px 8px 0;padding:10px 16px;margin-bottom:0">
-        <p style="margin:0;color:#4E342E;font-size:clamp(13px,1.6vw,15px);font-weight:500;line-height:1.8;text-shadow:none"><strong style="color:#E65100">ホウ酸防蟻</strong>なら、一度の施工で半永久。人体・ペットに安全な自然素材です。</p>
+      <h1 class="hero-h1">5年ごとに撒かれる<wbr><span style="white-space:nowrap">合成殺虫剤、</span><br>家族が吸っています。</h1>
+      <div style="background:rgba(255,193,7,0.22);border-left:4px solid #F9A825;border-radius:0 8px 8px 0;padding:10px 16px">
+        <p style="margin:0;color:#4E342E;font-size:clamp(13px,1.6vw,15px);font-weight:500;line-height:1.8"><strong style="color:#E65100">ホウ酸防蟻</strong>なら、一度の施工で半永久。人体・ペットに安全な自然素材です。</p>
       </div>
     </div>
-    <div class="hero-trust" style="display:grid!important;grid-template-columns:1fr 1fr;gap:8px">
-      <div class="tbadge" style="font-size:13px;padding:8px 12px;white-space:nowrap">🌿 人体・ペットに安全</div>
-      <div class="tbadge" style="font-size:13px;padding:8px 12px;white-space:nowrap">♾️ 半永久効果・再処理不要</div>
-      <div class="tbadge" style="font-size:13px;padding:8px 12px;white-space:nowrap">🏛️ JBTA認定施工店</div>
-      <div class="tbadge" style="font-size:13px;padding:8px 12px;white-space:nowrap">🚫 訪問販売一切なし</div>
-    </div>
+  </div>
+  <!-- 中段：写真のみ（テキスト重ねなし） -->
+  <div class="hero-photo-wrap">
+    <img src="hero.jpg" alt="家族写真" class="hero-photo-img">
+  </div>
+  <!-- 下段：バッジ2×2グリッド -->
+  <div class="hero-badges-wrap">
+    <div class="tbadge" style="font-size:13px;padding:8px 12px;white-space:nowrap">🌿 人体・ペットに安全</div>
+    <div class="tbadge" style="font-size:13px;padding:8px 12px;white-space:nowrap">♾️ 半永久効果・再処理不要</div>
+    <div class="tbadge" style="font-size:13px;padding:8px 12px;white-space:nowrap">🏛️ JBTA認定施工店</div>
+    <div class="tbadge" style="font-size:13px;padding:8px 12px;white-space:nowrap">🚫 訪問販売一切なし</div>
   </div>
 </section>
 
@@ -712,10 +720,9 @@ footer a{color:#2a5008!important}
 
 /* ===== PC（768px以上）===== */
 @media(min-width:768px){
-  section.hero{background-color:#f0e8d8!important}
-  .hero-bg{background-size:55% auto!important;background-position:right 18%!important}
-  .hero-in h1{color:#B71C1C!important;text-shadow:none!important;-webkit-text-stroke:0!important}
-  .hero-in p,.hero-in li,.hero-in span{color:#2c1a0e!important;text-shadow:none!important}
+  .hero-h1{font-size:2.4rem!important}
+  .hero-photo-img{max-height:480px!important}
+  .hero-badges-wrap{padding:20px 24px!important}
   .direct-grid{grid-template-columns:repeat(2,1fr)!important;gap:28px!important;max-width:900px!important;margin:0 auto!important}
   footer p:first-child{font-size:26px!important;font-weight:800!important;margin-bottom:12px!important}
   .faq-item{padding:24px 36px!important}
@@ -774,32 +781,19 @@ footer a{color:#2a5008!important}
   /* eyebrow：letter-spacingを詰めて1行に収める */
   .hero-eyebrow{font-size:14px!important;letter-spacing:0.05em!important;padding:6px 12px!important}
 
-  /* ヒーローh1：収まるサイズで目立たせる */
-  .hero h1{
+  /* ヒーロー：積み上げレイアウト */
+  .hero h1,.hero-h1{
     font-size:1.55rem!important;
-    line-height:1.55!important;
-    margin-bottom:0!important;
+    line-height:1.5!important;
+    margin-bottom:16px!important;
     margin-top:0!important;
     text-shadow:none!important;
     -webkit-text-stroke:0!important;
     color:#B71C1C!important;
-    paint-order:stroke fill!important;
   }
-  .hero h1 em{color:#f5c97a!important}
-
-  /* ヒーロー：h1を上部固定、hero-inをposition:relativeで全高確保、バッジを底へ */
-  .hero{align-items:flex-start!important}
-  .hero-in{
-    position:relative!important;
-    padding:5vh 16px 0!important;
-    min-height:calc(100vh - 64px)!important;
-  }
-  .hero-trust{
-    position:absolute!important;
-    bottom:20px!important;
-    left:16px!important;
-    right:16px!important;
-    z-index:3!important;
+  .hero-badges-wrap{
+    grid-template-columns:1fr 1fr!important;
+    padding:12px 16px!important;
   }
 }
 </style></body>
