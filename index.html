@@ -247,19 +247,21 @@ p.form-privacy { font-size: 16px !important; }
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-in">
-    <div style="display:inline-flex;align-items:center;gap:6px;background:#C0392B;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.12em;padding:5px 12px;border-radius:4px;margin-bottom:14px">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><path d="M12 2L1 21h22L12 2z" fill="#fff" stroke="#fff" stroke-width="1"/><path d="M12 9v5M12 17h.01" stroke="#C0392B" stroke-width="2" stroke-linecap="round"/></svg>
-      WARNING
+    <div style="background:rgba(255,255,255,0.78);padding:1.5rem 2rem;border-radius:16px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);width:fit-content;max-width:560px">
+      <div style="display:inline-flex;align-items:center;gap:6px;background:#C0392B;color:#fff;font-size:12px;font-weight:700;letter-spacing:0.12em;padding:5px 12px;border-radius:4px;margin-bottom:14px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex-shrink:0"><path d="M12 2L1 21h22L12 2z" fill="#fff" stroke="#fff" stroke-width="1"/><path d="M12 9v5M12 17h.01" stroke="#C0392B" stroke-width="2" stroke-linecap="round"/></svg>
+        WARNING
+      </div>
+      <h1 style="-webkit-text-stroke:0!important;text-shadow:none!important;color:#B71C1C!important">5年ごとに撒かれる<wbr><span style="white-space:nowrap">合成殺虫剤、</span><br>家族が吸っています。</h1>
+      <div style="display:block;background:rgba(255,193,7,0.22);border-left:4px solid #F9A825;border-radius:0 8px 8px 0;padding:10px 16px;margin-bottom:0">
+        <p style="margin:0;color:#4E342E;font-size:clamp(13px,1.6vw,15px);font-weight:500;line-height:1.8;text-shadow:none"><strong style="color:#E65100">ホウ酸防蟻</strong>なら、一度の施工で半永久。人体・ペットに安全な自然素材です。</p>
+      </div>
     </div>
-    <h1 style="-webkit-text-stroke:0!important;text-shadow:0 1px 4px rgba(255,255,255,0.8),0 0 12px rgba(255,255,255,0.6)!important;color:#B71C1C!important">5年ごとに撒かれる<wbr><span style="white-space:nowrap">合成殺虫剤、</span><br>家族が吸っています。</h1>
-    <div style="display:inline-block;background:rgba(255,193,7,0.22);border-left:4px solid #F9A825;border-radius:0 8px 8px 0;padding:10px 16px;margin-bottom:24px;max-width:520px">
-      <p style="margin:0;color:#4E342E;font-size:clamp(13px,1.6vw,15px);font-weight:500;line-height:1.8;text-shadow:none"><strong style="color:#E65100">ホウ酸防蟻</strong>なら、一度の施工で半永久。人体・ペットに安全な自然素材です。</p>
-    </div>
-    <div class="hero-trust">
-      <div class="tbadge">🌿 人体・ペットに安全な自然素材</div>
-      <div class="tbadge">♾️ 半永久効果・再処理不要</div>
-      <div class="tbadge">🏛️ JBTA認定施工店</div>
-      <div class="tbadge">🚫 訪問販売・飛び込み営業一切なし</div>
+    <div class="hero-trust" style="display:grid!important;grid-template-columns:1fr 1fr;gap:8px">
+      <div class="tbadge" style="font-size:13px;padding:8px 12px;white-space:nowrap">🌿 人体・ペットに安全</div>
+      <div class="tbadge" style="font-size:13px;padding:8px 12px;white-space:nowrap">♾️ 半永久効果・再処理不要</div>
+      <div class="tbadge" style="font-size:13px;padding:8px 12px;white-space:nowrap">🏛️ JBTA認定施工店</div>
+      <div class="tbadge" style="font-size:13px;padding:8px 12px;white-space:nowrap">🚫 訪問販売一切なし</div>
     </div>
   </div>
 </section>
@@ -712,7 +714,7 @@ footer a{color:#2a5008!important}
 @media(min-width:768px){
   section.hero{background-color:#f0e8d8!important}
   .hero-bg{background-size:55% auto!important;background-position:right 18%!important}
-  .hero-in h1{color:#B71C1C!important;text-shadow:0 1px 4px rgba(255,255,255,0.8),0 0 12px rgba(255,255,255,0.6)!important;-webkit-text-stroke:0!important}
+  .hero-in h1{color:#B71C1C!important;text-shadow:none!important;-webkit-text-stroke:0!important}
   .hero-in p,.hero-in li,.hero-in span{color:#2c1a0e!important;text-shadow:none!important}
   .direct-grid{grid-template-columns:repeat(2,1fr)!important;gap:28px!important;max-width:900px!important;margin:0 auto!important}
   footer p:first-child{font-size:26px!important;font-weight:800!important;margin-bottom:12px!important}
@@ -778,7 +780,7 @@ footer a{color:#2a5008!important}
     line-height:1.55!important;
     margin-bottom:0!important;
     margin-top:0!important;
-    text-shadow:0 1px 4px rgba(255,255,255,0.8),0 0 12px rgba(255,255,255,0.6)!important;
+    text-shadow:none!important;
     -webkit-text-stroke:0!important;
     color:#B71C1C!important;
     paint-order:stroke fill!important;
