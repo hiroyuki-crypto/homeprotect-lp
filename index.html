@@ -651,6 +651,15 @@ upd();
 
 <style id="final-override">
 /* ===== 全体共通 ===== */
+/* WARNINGバッジ：スマホ・PC共通でゆっくり点滅 */
+@keyframes warning-blink{
+  0%,100%{opacity:1}
+  50%{opacity:0.25}
+}
+.hero-text-panel > div > div:first-child{
+  animation:warning-blink 2.5s ease-in-out infinite;
+}
+
 /* 見出しの自然な折り返し */
 h1,h2,h3,h4{text-wrap:balance}
 /* 本文の孤立単語防止 */
@@ -794,15 +803,10 @@ footer a{color:#2a5008!important}
     justify-content:flex-start!important;
   }
 
-  /* WARNINGバッジ：大きく＋ゆっくり点滅 */
-  @keyframes warning-blink{
-    0%,100%{opacity:1}
-    50%{opacity:0.25}
-  }
+  /* WARNINGバッジ：PCでは大きく */
   .hero-text-panel > div > div:first-child{
     font-size:20px!important;
     padding:11px 28px!important;
-    animation:warning-blink 2.5s ease-in-out infinite!important;
   }
   .hero-text-panel > div > div:first-child span{
     font-size:24px!important;
