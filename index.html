@@ -226,6 +226,11 @@ p.form-privacy { font-size: 16px !important; }
 <body>
 
 <header>
+  <!-- JBTAロゴ（PC専用・左） -->
+  <div class="header-jbta">
+    <img src="jbta-logo.png" alt="JBTA 一般社団法人日本ホウ酸処理協会">
+  </div>
+  <!-- 会社ロゴ・社名（中央） -->
   <div class="logo" style="display:flex;align-items:center;gap:10px">
     <img src="logo.png" alt="ホームプロテクトロゴ" style="height:40px;width:auto;flex-shrink:0">
     <div>株式会社ホームプロテクト<span>ホウ酸防蟻施工 直接責任施工</span></div>
@@ -728,6 +733,33 @@ footer a{color:#2a5008!important}
 
 /* ===== PC（768px以上）===== */
 @media(min-width:768px){
+  /* ヘッダー：左JBTA・中央社名・右電話の3カラム */
+  header{justify-content:space-between!important}
+
+  /* JBTAロゴ表示・サイズ */
+  .header-jbta{
+    display:flex!important;
+    align-items:center!important;
+    flex-shrink:0!important;
+  }
+  .header-jbta img{
+    height:54px!important;
+    width:auto!important;
+    border-radius:4px!important;
+  }
+
+  /* 社名エリア：中央寄せ・大きく */
+  .logo{
+    flex:1!important;
+    justify-content:center!important;
+    display:flex!important;
+    align-items:center!important;
+    font-size:22px!important;
+    gap:14px!important;
+  }
+  .logo img{height:54px!important;width:auto!important}
+  .logo span{font-size:15px!important}
+
   .hero-h1{font-size:2.4rem!important}
   .direct-grid{grid-template-columns:repeat(2,1fr)!important;gap:28px!important;max-width:900px!important;margin:0 auto!important}
   footer p:first-child{font-size:26px!important;font-weight:800!important;margin-bottom:12px!important}
@@ -826,6 +858,9 @@ footer a{color:#2a5008!important}
 
 /* ===== スマホ（767px以下）===== */
 @media(max-width:767px){
+  /* JBTAロゴはスマホ非表示 */
+  .header-jbta{display:none!important}
+
   /* 見出しをモバイル向けに縮小 */
   section h2,.sec h2{font-size:1.3em!important;line-height:1.5!important}
   section h3,.sec h3{font-size:1.25em!important}
