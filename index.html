@@ -793,6 +793,31 @@ footer a{color:#2a5008!important}
     padding:13px 16px!important;
     justify-content:flex-start!important;
   }
+
+  /* WARNINGバッジ：大きく＋ゆっくり点滅 */
+  @keyframes warning-blink{
+    0%,100%{opacity:1}
+    50%{opacity:0.25}
+  }
+  .hero-text-panel > div > div:first-child{
+    font-size:20px!important;
+    padding:11px 28px!important;
+    animation:warning-blink 2.5s ease-in-out infinite!important;
+  }
+  .hero-text-panel > div > div:first-child span{
+    font-size:24px!important;
+  }
+
+  /* サブコピー：1行・大きく */
+  .hero-text-panel > div > div:nth-child(3) p{
+    font-size:clamp(15px,1.4vw,18px)!important;
+    line-height:1.75!important;
+    white-space:nowrap!important;
+    word-break:normal!important;
+  }
+  .hero-text-panel > div > div:nth-child(3) p br{
+    display:none!important;
+  }
 }
 
 /* ===== スマホ（767px以下）===== */
