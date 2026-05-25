@@ -162,15 +162,26 @@ section{padding:84px 22px}
 .phase-threat .sec-lead{color:rgba(255,255,255,.78)}
 .threat-photos{display:grid;gap:10px;grid-template-columns:repeat(2,1fr);margin-bottom:14px}
 .threat-photo{
+  position:relative;
   aspect-ratio:1/1;
-  background:rgba(255,255,255,.04);
-  border:1px dashed rgba(159,225,203,.35);
+  background:#000;
   border-radius:var(--r);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  color:var(--green-soft);font-size:11px;letter-spacing:.18em;gap:6px;
+  overflow:hidden;
+  margin:0;
 }
 .threat-photo.wide{grid-column:span 2;aspect-ratio:16/10}
-.threat-photo svg{width:24px;height:24px;opacity:.6;stroke-width:1.3}
+.threat-photo img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  filter:grayscale(0.4) contrast(0.95) brightness(0.92);
+}
+.threat-cap-overlay{
+  position:absolute;left:0;right:0;bottom:0;
+  background:linear-gradient(180deg,transparent 0%,rgba(6,53,43,0.55) 50%,rgba(6,53,43,0.95) 100%);
+  color:#fff;font-size:12px;letter-spacing:.02em;
+  padding:32px 14px 12px;line-height:1.6;
+  font-family:'Noto Sans JP',sans-serif;font-weight:500;
+  text-align:left;
+}
 .threat-cap{
   font-size:11px;color:rgba(255,255,255,.5);
   text-align:right;margin-bottom:48px;letter-spacing:.05em;
@@ -860,20 +871,20 @@ footer .f-copy{font-size:11px;color:rgba(255,255,255,.45);margin-top:24px;letter
     </p>
 
     <div class="threat-photos reveal d3">
-      <div class="threat-photo wide">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><polyline points="3 17 9 11 21 21"/></svg>
-        <span>被害写真 ①（準備中）</span>
-      </div>
-      <div class="threat-photo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/></svg>
-        <span>被害写真 ②</span>
-      </div>
-      <div class="threat-photo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/></svg>
-        <span>被害写真 ③</span>
-      </div>
+      <figure class="threat-photo wide">
+        <img src="images/damage/threat-01.jpg" alt="シロアリによる柱・梁の食害" loading="lazy">
+        <figcaption class="threat-cap-overlay keep">柱や梁が、内側から食い荒らされる</figcaption>
+      </figure>
+      <figure class="threat-photo">
+        <img src="images/damage/threat-02.jpg" alt="基礎を伝う蟻道" loading="lazy">
+        <figcaption class="threat-cap-overlay keep">基礎を伝って侵入してくる（蟻道）</figcaption>
+      </figure>
+      <figure class="threat-photo">
+        <img src="images/damage/threat-03.jpg" alt="床下全体に広がる被害" loading="lazy">
+        <figcaption class="threat-cap-overlay keep">気づけば床下全体に被害が広がる</figcaption>
+      </figure>
     </div>
-    <p class="threat-cap keep">※実際の床下調査記録より掲載予定</p>
+    <p class="threat-cap keep">※当社が実際に床下調査で撮影した記録写真です</p>
 
     <div class="industry-darkness">
       <h3 class="industry-h3 reveal keep">
