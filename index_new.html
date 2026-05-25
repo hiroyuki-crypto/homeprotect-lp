@@ -27,11 +27,30 @@ body{
   font-family:'Noto Sans JP',sans-serif;
   font-weight:400;
   color:var(--ink);
-  background:var(--cream);
+  background-color:var(--green-deep);
+  background-image:url('images/woodgrain_v2.png');
+  background-repeat:repeat-y;
+  background-position:center top;
   line-height:1.85;
   text-wrap:pretty;
+  position:relative;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+}
+/* 中央480px列の左右に細いゴールド縦ライン（PC時のみ） */
+body::before, body::after{
+  content:'';
+  position:fixed;
+  top:0;bottom:0;
+  width:1px;
+  background:rgba(199,165,106,0.4);
+  z-index:2;
+  pointer-events:none;
+  display:none;
+}
+@media (min-width:900px){
+  body::before{display:block;left:calc(50% - 240px)}
+  body::after{display:block;right:calc(50% - 240px)}
 }
 h1,h2,h3,h4,.display{
   font-family:'Zen Old Mincho',serif;
@@ -45,9 +64,12 @@ img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer}
 
-/* ===== HEADER ===== */
+/* ===== HEADER （中央480px列に追従） ===== */
 header{
-  position:fixed;top:0;left:0;right:0;z-index:50;
+  position:fixed;top:0;
+  left:50%;transform:translateX(-50%);
+  width:100%;max-width:480px;
+  z-index:50;
   background:var(--green-deep);
   padding:14px 20px;
   display:flex;align-items:center;justify-content:space-between;gap:12px;
@@ -68,6 +90,7 @@ header{
 .hero{
   position:relative;
   min-height:100vh;
+  max-width:480px;margin-left:auto;margin-right:auto;
   background:var(--green-deep);
   display:flex;
   justify-content:center;
@@ -150,9 +173,9 @@ h1.hero-title em{font-style:normal;color:var(--gold)}
 .trust-item svg{width:22px;height:22px;color:var(--green-soft);stroke-width:1.4}
 .trust-item span{font-size:11px;font-weight:500;line-height:1.55;letter-spacing:.02em}
 
-/* ===== SECTION BASE ===== */
-section{padding:84px 22px}
-.sec-in{max-width:620px;width:100%;margin:0 auto}
+/* ===== SECTION BASE （全セクション中央480px列に固定） ===== */
+section{padding:84px 22px;max-width:480px;margin-left:auto;margin-right:auto}
+.sec-in{max-width:480px;width:100%;margin:0 auto}
 .sec-label{
   font-size:11px;letter-spacing:.25em;color:var(--gold);
   margin-bottom:14px;font-weight:500;
@@ -657,6 +680,7 @@ section{padding:84px 22px}
 footer{
   background:var(--green-darker);color:rgba(255,255,255,.7);
   padding:48px 22px 110px;text-align:center;
+  max-width:480px;margin-left:auto;margin-right:auto;
 }
 footer .f-logo{
   font-family:'Zen Old Mincho',serif;font-weight:700;
@@ -676,7 +700,9 @@ footer .f-copy{font-size:11px;color:rgba(255,255,255,.45);margin-top:24px;letter
 
 /* sticky bottom CTA (mobile) */
 .sticky-cta{
-  position:fixed;bottom:0;left:0;right:0;
+  position:fixed;bottom:0;
+  left:50%;transform:translateX(-50%);
+  width:100%;max-width:480px;
   background:var(--green-deep);
   padding:10px;z-index:40;
   display:flex;gap:8px;
@@ -691,6 +717,104 @@ footer .f-copy{font-size:11px;color:rgba(255,255,255,.45);margin-top:24px;letter
 .sticky-cta a svg{width:14px;height:14px}
 .sticky-cta .tel{background:var(--gold);color:var(--green-deep)}
 .sticky-cta .frm{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+
+/* ===== PANE （PC専用・左右余白の装飾＆追従CTA） ===== */
+.pane{
+  position:fixed;top:0;
+  height:100vh;
+  display:none;
+  z-index:3;
+  pointer-events:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:36px;
+  padding:80px 24px;
+}
+.pane > *{pointer-events:auto}
+.pane-left{
+  left:0;
+  width:calc(50% - 241px);
+}
+.pane-right{
+  right:0;
+  width:calc(50% - 241px);
+}
+@media (min-width:900px){
+  .pane{display:flex}
+}
+
+/* 縦書きブランドコピー（左ペーン） */
+.brand-copy{
+  writing-mode:vertical-rl;
+  font-family:'Zen Old Mincho',serif;
+  font-weight:700;
+  font-size:22px;
+  letter-spacing:.18em;
+  color:#fff;
+  line-height:1.85;
+  word-break:keep-all;
+  line-break:strict;
+}
+.brand-copy em{font-style:normal;color:var(--gold)}
+
+/* JBTA認定マーク（左ペーン） */
+.jbta-seal{
+  width:96px;height:96px;
+  border:2px solid var(--gold);
+  border-radius:var(--pill);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:var(--gold);
+  text-align:center;
+  background:rgba(6,53,43,0.6);
+}
+.jbta-seal .seal-label{
+  font-family:'Zen Old Mincho',serif;font-weight:700;
+  font-size:20px;letter-spacing:.06em;line-height:1;
+}
+.jbta-seal .seal-sub{
+  font-size:10px;letter-spacing:.18em;
+  margin-top:6px;line-height:1.3;
+}
+
+/* 電話CTAカード（右ペーン） */
+.cta-card{
+  background:#0a4534;
+  border:1.5px solid var(--gold);
+  border-radius:var(--r);
+  padding:24px 20px;
+  width:240px;
+  color:#fff;
+  text-align:center;
+}
+.cta-card .cta-card-label{
+  font-size:11px;color:var(--gold);
+  letter-spacing:.18em;margin-bottom:14px;
+  font-weight:500;
+}
+.cta-card .cta-card-tel{
+  display:block;
+  font-family:'Zen Old Mincho',serif;font-weight:700;
+  font-size:22px;color:#fff;letter-spacing:.02em;
+  line-height:1.2;margin-bottom:6px;
+  text-decoration:none;
+}
+.cta-card .cta-card-hours{
+  font-size:11px;color:rgba(255,255,255,.65);
+  margin-bottom:18px;letter-spacing:.05em;
+}
+.cta-card .cta-card-button{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--gold);color:var(--green-deep);
+  padding:13px;border-radius:var(--pill);
+  font-weight:700;font-size:14px;letter-spacing:.02em;
+  margin-bottom:12px;text-decoration:none;
+}
+.cta-card .cta-card-button svg{width:14px;height:14px}
+.cta-card .cta-card-foot{
+  font-size:10px;color:rgba(255,255,255,.5);
+  letter-spacing:.05em;
+}
 
 /* phase-end inline CTA */
 .phase-cta{margin-top:54px;text-align:center}
@@ -723,75 +847,42 @@ footer .f-copy{font-size:11px;color:rgba(255,255,255,.45);margin-top:24px;letter
 .reveal.d5{transition-delay:.40s}
 .reveal.d6{transition-delay:.48s}
 
-/* ===== PC LAYOUT ===== */
+/* ===== PC LAYOUT （スマホファースト徹底：中央列480pxはmobile設定を維持。
+                    PCは縦paddingと不要なsticky-cta非表示のみ調整） ===== */
 @media (min-width:820px){
-  header{padding:18px 32px}
-  .h-brand-name{font-size:20px}
-  .h-brand-sub{font-size:11px}
-  .h-cta{padding:12px 22px;font-size:14px}
-  .h-cta svg{width:15px;height:15px}
-
-  /* ヒーローはスマホファースト固定（max-width:480pxフレームを中央表示） */
-  /* h1/sub/CTA/trust-rowはmobileサイズのまま使うので上書きしない */
+  section{padding-top:120px;padding-bottom:120px}
+  .closing{padding-top:96px;padding-bottom:96px}
   .closing .btn-primary,.closing .btn-outline{padding:20px 26px}
-
-  section{padding:130px 40px}
-  .sec-in{max-width:920px}
-  .sec-title{font-size:38px;line-height:1.6}
-  .sec-lead{font-size:15px;max-width:680px}
-
-  .threat-photos{grid-template-columns:repeat(3,1fr)}
-  .industry-h3{font-size:26px}
-  .dark-reason{padding:26px 28px}
-  .dark-reason h4{font-size:18px}
-  .dark-reason p{font-size:14px}
-
-  .weapon{padding:48px 42px;margin-bottom:24px}
-  .weapon h3{font-size:26px}
-  .weapon p{font-size:15px;max-width:640px}
-  .body-diagram{gap:20px;max-width:560px}
-  .body-card{padding:28px 18px}
-  .body-card svg{width:54px;height:54px}
-  .world-row{gap:20px;max-width:640px}
-  .world-thing{font-size:18px}
-
-  .hero-claim{padding:40px 32px;margin-bottom:44px}
-  .hero-claim h3{font-size:22px}
-  .evidence-grid{grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px}
-  .yt-placeholder{max-width:720px;margin:0 auto}
-
-  .cost-cmp{padding:40px 36px}
-  .cost-label .price{font-size:22px}
-  .pricing-card{padding:40px 36px}
-  .base-line .val{font-size:38px}
-  .pricing-table th,.pricing-table td{padding:13px 8px;font-size:14px}
-  .sim-card{padding:40px 36px;max-width:680px;margin-left:auto;margin-right:auto;margin-bottom:48px}
-  .sim-title{font-size:22px}
-  .sim-out .out-price{font-size:40px}
-  .flow{padding:12px 36px;max-width:680px;margin-left:auto;margin-right:auto;margin-bottom:48px}
-  .flow-t{font-size:15px}
-  .flow-d{font-size:13px}
-  .faq{padding:6px 36px;max-width:680px;margin-left:auto;margin-right:auto;margin-bottom:48px}
-  .faq summary{font-size:15px}
-  .faq .a{font-size:14px}
-  .form-card{padding:44px 40px;max-width:680px;margin-left:auto;margin-right:auto}
-  .form-card .ttl{font-size:22px}
-
-  .closing{padding:96px 40px}
-  .closing h2{font-size:30px}
-  .closing .closing-ctas{flex-direction:row;max-width:560px}
-  .closing .closing-ctas a{flex:1}
-
-  footer{padding:60px 32px 60px}
-  footer .f-logo{font-size:22px}
-  footer .f-co{font-size:16px}
-  footer p{font-size:13px}
-
+  footer{padding:60px 22px 60px}
+  /* PCでは右ペーンに電話CTAがあるので下sticky-ctaは不要 */
   .sticky-cta{display:none}
 }
 </style>
 </head>
 <body>
+
+<!-- ===== 左ペーン（PC専用・縦書きコピー + JBTA認定マーク） ===== -->
+<aside class="pane pane-left" aria-hidden="true">
+  <div class="brand-copy keep">家族と家を、<em>ホウ酸</em>で守る。</div>
+  <div class="jbta-seal" role="img" aria-label="JBTA認定施工店">
+    <div class="seal-label">JBTA</div>
+    <div class="seal-sub keep">認定施工店</div>
+  </div>
+</aside>
+
+<!-- ===== 右ペーン（PC専用・追従電話CTAカード） ===== -->
+<aside class="pane pane-right">
+  <div class="cta-card">
+    <div class="cta-card-label keep">お電話でのご相談</div>
+    <a href="tel:0725904466" class="cta-card-tel keep">0725-90-4466</a>
+    <div class="cta-card-hours keep">平日 9:00〜17:00</div>
+    <a href="tel:0725904466" class="cta-card-button keep">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+      <span>無料相談する</span>
+    </a>
+    <div class="cta-card-foot keep">しつこい営業なし</div>
+  </div>
+</aside>
 
 <!-- ===== HEADER ===== -->
 <header>
