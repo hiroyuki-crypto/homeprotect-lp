@@ -1408,7 +1408,7 @@ footer .f-copy{font-size:11px;color:rgba(255,255,255,.45);margin-top:24px;letter
       <div class="ttl keep">無料相談のお申込み</div>
       <p class="ttl-sub keep">通常1営業日以内にご連絡します。</p>
 
-      <form id="lead-form" novalidate>
+      <form id="lead-form" novalidate action="https://formspree.io/f/xeedrvok" method="POST">
         <div class="form-row split">
           <div>
             <label class="keep">お名前<span class="req">*</span></label>
@@ -1474,6 +1474,8 @@ footer .f-copy{font-size:11px;color:rgba(255,255,255,.45);margin-top:24px;letter
           <span>無料で申し込む</span>
         </button>
         <p class="form-note keep">送信後、当社からご連絡いたします。<br>しつこい営業は一切ありません。お気軽にどうぞ。</p>
+        <input type="hidden" name="_subject" value="【ホームプロテクト】LPから新規お問い合わせ">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       </form>
 
       <div class="form-thanks" id="form-thanks">
@@ -1570,9 +1572,25 @@ footer .f-copy{font-size:11px;color:rgba(255,255,255,.45);margin-top:24px;letter
   if(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      form.style.display = 'none';
-      document.getElementById('form-thanks').style.display = 'block';
-      document.getElementById('form-thanks').scrollIntoView({behavior:'smooth', block:'center'});
+      var btn = form.querySelector('button[type="submit"]');
+      if(btn){ btn.disabled = true; }
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(res){
+        if(res.ok){
+          form.style.display = 'none';
+          document.getElementById('form-thanks').style.display = 'block';
+          document.getElementById('form-thanks').scrollIntoView({behavior:'smooth', block:'center'});
+        } else {
+          if(btn){ btn.disabled = false; }
+          alert('送信に失敗しました。お電話（0725-90-4466）でもお問い合わせいただけます。');
+        }
+      }).catch(function(){
+        if(btn){ btn.disabled = false; }
+        alert('通信エラーが発生しました。お電話（0725-90-4466）でもお問い合わせください。');
+      });
     });
   }
 })();
