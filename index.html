@@ -670,6 +670,14 @@ section{padding:84px 22px;max-width:480px;margin-left:auto;margin-right:auto}
   text-align:center;margin-top:14px;line-height:1.8;
   font-family:'Noto Sans JP',sans-serif;
 }
+/* やさしい入力ヒント：送信ボタン押下時のみ表示。控えめな配色で離脱回避 */
+.field-hint{
+  display:none;
+  font-size:13px;color:#b45309;
+  margin-top:4px;line-height:1.6;
+  font-family:'Noto Sans JP',sans-serif;font-weight:400;
+}
+.field-hint.show{display:block}
 .form-thanks{
   display:none;
   text-align:center;padding:30px 10px;
@@ -1413,19 +1421,23 @@ footer .f-copy{font-size:11px;color:rgba(255,255,255,.45);margin-top:24px;letter
           <div>
             <label class="keep">お名前<span class="req">*</span></label>
             <input type="text" name="name" required autocomplete="name">
+            <span class="field-hint" data-for="name"></span>
           </div>
           <div>
             <label class="keep">電話番号<span class="req">*</span></label>
             <input type="tel" name="tel" required autocomplete="tel" inputmode="tel">
+            <span class="field-hint" data-for="tel"></span>
           </div>
         </div>
         <div class="form-row">
           <label class="keep">メールアドレス</label>
           <input type="email" name="email" autocomplete="email" inputmode="email">
+          <span class="field-hint" data-for="email"></span>
         </div>
         <div class="form-row">
           <label class="keep">市区町村<span class="req">*</span></label>
           <input type="text" name="city" required placeholder="例：大阪府和泉市">
+          <span class="field-hint" data-for="city"></span>
         </div>
         <div class="form-row split">
           <div>
@@ -1567,11 +1579,50 @@ footer .f-copy{font-size:11px;color:rgba(255,255,255,.45);margin-top:24px;letter
   if(slider){ slider.addEventListener('input', sim); }
   sim();
 
-  // form submit
+  // form submit + やさしい入力チェック
   var form = document.getElementById('lead-form');
   if(form){
+    function showHint(fieldName, msg){
+      var hint = form.querySelector('.field-hint[data-for="'+fieldName+'"]');
+      if(hint){ hint.textContent = msg; hint.classList.add('show'); }
+    }
+    function clearHint(fieldName){
+      var hint = form.querySelector('.field-hint[data-for="'+fieldName+'"]');
+      if(hint){ hint.textContent = ''; hint.classList.remove('show'); }
+    }
+    // 入力中はメッセージを自動で消す
+    ['name','tel','city','email'].forEach(function(n){
+      var el = form.querySelector('[name="'+n+'"]');
+      if(el){ el.addEventListener('input', function(){ clearHint(n); }); }
+    });
+
     form.addEventListener('submit', function(e){
       e.preventDefault();
+
+      // やさしい検証（送信ボタン押下時のみ）
+      var nameEl  = form.querySelector('[name="name"]');
+      var telEl   = form.querySelector('[name="tel"]');
+      var cityEl  = form.querySelector('[name="city"]');
+      var emailEl = form.querySelector('[name="email"]');
+      var firstInvalid = null;
+
+      ['name','tel','city','email'].forEach(function(n){ clearHint(n); });
+
+      if(!nameEl.value.trim()){ showHint('name','ご入力をお願いします'); firstInvalid = firstInvalid || nameEl; }
+      if(!telEl.value.trim()){  showHint('tel', 'ご入力をお願いします'); firstInvalid = firstInvalid || telEl;  }
+      if(!cityEl.value.trim()){ showHint('city','ご入力をお願いします'); firstInvalid = firstInvalid || cityEl; }
+      var emailVal = emailEl.value.trim();
+      if(emailVal && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)){
+        showHint('email','メールアドレスをご確認ください（任意です。空欄でも送信できます）');
+        firstInvalid = firstInvalid || emailEl;
+      }
+
+      if(firstInvalid){
+        firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
+        setTimeout(function(){ firstInvalid.focus({preventScroll:true}); }, 320);
+        return;
+      }
+
       var btn = form.querySelector('button[type="submit"]');
       if(btn){ btn.disabled = true; }
       fetch(form.action, {
